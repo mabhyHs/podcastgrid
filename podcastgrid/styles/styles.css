@@ -1,0 +1,676 @@
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin: 0;
+  }
+  
+  
+  body{
+      
+      font-family: 'IBM Plex Sans', sans-serif; 
+      font-family: 'IBM Plex Serif', serif;
+      font-family: 'IBM Plex Mono', monospace;
+      font-family: 'IBM Plex Sans Condensed', sans-serif;
+      margin: 0; 
+  
+  }
+
+.container{
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas: "header "
+                         "content"
+                         "episodios"
+                         "phoneimg"
+                         "phone"
+                         "interviews"
+                         "topics"
+                         "end-container"
+                         "footer"
+                         
+                         
+}
+/* text change */
+
+#tittle::after{
+  content: ".";
+  color: #060A24;
+}
+
+.text_responsive:before{
+  content: attr(data-phonetext);
+  display: block;
+  font-family: 'IBM Plex Mono';
+  font-size: 14px;
+  color: #060A24;
+  letter-spacing: 0;
+  line-height: 22px;
+  margin: 0px 16px 36px 16px;
+  width:288px ;
+  height: 66px;
+  
+}
+
+/* header */
+a {
+    color: #000;
+  }
+
+header{
+    margin: 0 auto;
+    grid-area: header;
+    background-color: #fff;
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    z-index: 10;
+       
+      }
+      
+      nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+        background-color:#0000EC;
+       
+      }
+      
+      nav li a {
+        margin: 0 auto;       
+        padding: 20px 20px;
+        text-decoration: none;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 16px;
+        color: #FFFFFF;       
+        line-height: 40px;
+        
+      }
+  
+      #logo {
+        display: block;
+        float: left;
+        margin: 15px 0px 10px 16px;
+        font-size: 24px;
+        text-decoration: none;
+      }
+      
+      /* menu */
+      
+      nav .menu {
+        clear: both;
+        max-height: 0;
+        transition: max-height .2s ease-out;
+      }
+      
+      /* menu icon */
+      
+      nav .menu-icon {
+        cursor: pointer;
+        display: block;
+        float: right;
+        padding: 28px 20px;
+        position: relative;
+        user-select: none;
+      }
+      
+      nav .menu-icon .navicon {
+        background: #333;
+        display: block;
+        height: 2px;
+        position: relative;
+         width: 18px;
+      }
+      
+      nav .menu-icon .navicon:before,
+      nav .menu-icon .navicon:after {
+        background: #333;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        width: 100%;
+      }
+      
+      nav .menu-icon .navicon:before {
+        top: 5px;
+      }
+      
+      nav .menu-icon .navicon:after {
+        top: -5px;
+      }
+      
+      /* menu btn */
+      
+      nav .menu-btn {
+        display: none;
+      }
+      
+      nav .menu-btn:checked ~ .menu {
+        max-height: 240px;
+      }
+      
+      nav .menu-btn:checked ~ .menu-icon .navicon {
+        background: transparent;
+      }
+      
+      nav .menu-btn:checked ~ .menu-icon .navicon:before {
+        transform: rotate(-45deg);
+      }
+      
+      nav .menu-btn:checked ~ .menu-icon .navicon:after {
+        transform: rotate(45deg);
+      }
+      
+      nav .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+      nav .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+        top: 0;
+      }
+
+      
+  /* Headings */
+          
+      h1, h2,h3, h4, h5, h6{
+        font-family: 'IBM Plex Sans','sans-serif';
+        font-size: 36px;
+        font-weight: lighter;
+        color: #060A24;
+        letter-spacing: 0;
+        line-height: 42px;
+      }
+
+      h3, h4, h5{
+        width: 288px;
+        height: 84px;
+        text-align: left;
+        margin: 8px 16px 8px 16px;
+      }
+
+      h1{    
+        text-align: left;
+        margin: 73px 16px 16px 16px;
+
+      }
+
+      h2{
+        position: relative;
+        height: 42px;
+        width: 157px;
+        margin: 64px 147px 21px 16px;
+        color:#FFFFFF;
+        transform: translateY(100px);
+        z-index: 3;
+      }
+
+
+      h5{
+        margin: 48px 16px 24px 16px;
+      }
+
+      h6{
+        padding: 50px;
+        color: #FFFFFF;
+        text-align: center;   
+      }
+/* paragraph */
+
+  p{
+    margin: 0px;
+    font-family: 'IBM Plex Mono','sans-serif';
+    font-size: 14px;
+    color: #060A24;
+    letter-spacing: 0;
+    line-height: 22px;
+  }
+/* buttons */
+  .button1, .button2 {
+    display: block;
+    margin: 0 auto;
+    border: none;
+    background-color: #00F3BB;
+    color: #060A24;
+    width: 288px;
+    height: 48px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 22px;
+    cursor: pointer;       
+  }
+
+
+.button1{
+  position: relative;
+  z-index: 3;
+}
+
+.content{
+    grid-area: content;
+
+}
+
+/*spotify */
+.episodios{
+    margin-top: -70px;
+    grid-area: episodios;
+    
+}
+    .embed-container {
+      
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height:1203.5px;
+        width:100%;
+        background-image: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
+        transform: skewY(-6deg);       
+      
+       
+    }
+      .frame-container{
+        display: grid;
+        grid-template-columns: auto;
+        transform: skewY(6deg); 
+       
+      }
+
+      iframe{
+        border: none;
+        height:240px;            
+      }
+
+  /* phone */
+
+.phone{
+    grid-area: phone;
+    transform: translatey(-120px);
+}
+
+.phoneimg {
+    grid-area: phoneimg;
+}
+
+.phoneimg img{
+    width: 360px;
+    height: 519px;
+    margin: 48px 0px 27px 0px;
+    transform: translatey(-130px);
+}
+
+.phone p{
+  display: block;
+  margin: 0px 16px 15px 16px;
+  font-family: 'IBM Plex Mono';
+  font-size: 14px;
+  color: #060A24;
+  letter-spacing: 0;
+  line-height: 22px;
+  position: relative;
+  top: 8px;
+  
+}
+
+/* images grid */
+.interviews{
+  margin-top: -70px;
+  grid-area: interviews;
+}
+
+.row {
+  
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    padding: 0 ;
+  }
+
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+  
+  
+  .column img { 
+    vertical-align: middle;
+    width: 100%;
+  }
+
+  
+/* topics */
+.topics{
+    grid-area: topics;
+    margin: 0 auto;    
+    text-align: center;
+    
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper p{
+  font-family: 'IBM Plex Sans','sans-serif';
+  font-size: 24px;
+  color: #060A24;
+  letter-spacing: 0;
+  text-align: center;
+  font-weight: bolder;
+  width: 288px;
+  height: 64px;
+  margin-bottom: 30px;
+ 
+}
+
+.wrapper img{
+  width: 104px;
+  height: 104px;
+  padding: 15px;
+}
+
+/* final container */
+.end-container{
+    grid-area: end-container;
+    padding: 0;
+    width: 100%;
+    height: 360px;
+    margin: 0 auto;
+    background-image: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);  
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+  }
+ 
+  
+
+  
+/* footer */
+.footer{
+  grid-area: footer;
+  display: grid;
+  grid-template-columns: auto;
+  width: 100%;  
+   
+  }
+  
+  .ft-legal p{    
+    display: flex; 
+    justify-content: center;
+    font-size: 16px;
+    color: #060A24;
+    letter-spacing: 0;
+    line-height: 28px;
+  }
+
+     .ft-social {
+      
+       display: flex;
+      justify-content: space-around;
+      font-size: 16px;
+      color: #060A24;
+      letter-spacing: 0;
+      line-height: 28px;
+   
+  }
+ 
+
+  /* media queries */
+      
+  @media (min-width: 48em) {
+
+    /* navbar */
+    header{
+        height: 80px;
+    }
+        
+    nav li {
+      float: left;
+      background-color: #FFFFFF;
+    }
+    nav li a {
+      font-size: 16px;
+      letter-spacing: 0;
+      line-height: 28px;
+      padding: 20px 30px;
+      color: #060A24;
+    }
+
+    nav li a:hover,
+      nav .menu-btn:hover {
+        font-size: 16px;
+        color: #00F3BB;
+        text-decoration: line-through;
+        letter-spacing: 0;
+        line-height: 28px;
+      }
+      
+      nav li a:active,
+      nav .menu-btn:active { 
+        font-size: 16px;
+        color: rgba(6,10,36,0.56);
+        text-decoration: line-through;
+        letter-spacing: 0;
+        line-height: 28px;
+      }
+      
+      nav .menu {
+      margin: 26px auto;
+      clear: none;
+      float: right;
+      max-height: none;
+     }
+      nav .menu-icon {
+      display: none;
+    }
+
+     #logo {
+      display: block;
+      margin: 30px 0px 22px 100px;
+      font-size: 36px;  
+    }
+    
+/* grid container */
+    .container {
+      grid-template-areas:"header header"
+                          "content content"
+                          "episodios episodios"
+                          "phoneimg phone"
+                          "phoneimg phone"
+                          "interviews interviews"
+                          "topics topics"
+                          "end-container end-container"
+                          "footer footer"
+                            
+                                   
+      }
+      
+/* buttons */
+   .button1 {
+     margin: 56px 0px 5px 200px;
+     display: block;
+     float: left;
+     font-size: 18px;
+     line-height: 24px;
+     width: 226px;
+     height: 56px;
+     
+    }
+
+    .button2{
+      transform: translatey(230px);
+    }
+
+    .button1:hover,.button2:hover {
+      background-image: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
+      color: #FFFFFF;
+     }
+
+/* Headings*/
+
+  h2,h3, h4, h5, h6{
+      font-size: 48px;
+      line-height: 42px;
+      height: 62px;
+      font-weight:lighter;
+}
+  
+  h1{
+      display: block;
+      font-size: 64px;
+      margin:170px 0px 0px 200px;
+      line-height: 42px;
+      
+}
+  h2{
+     
+      width: 209px;
+      margin: 20px 0px 21px 200px;
+      transform: translateY(210px);
+      
+}
+
+
+  h3{
+      width:399px ;
+   
+}
+  h4{
+    width:481px ;
+    margin: 64px 0px 36px 200px;
+}
+
+  h5{
+    width:586px ;
+    margin: 64px 0px 56px -100px;  
+  }
+
+  h6{
+    transform: translatey(190px);
+  }
+
+  /* text change */
+  #tittle::after{
+    content: ".";
+    color: #0000EC;
+  }
+  .mobile { 
+    display: none; 
+  }
+    .text_responsive:before{
+      content: attr(data-desktoptext);
+      display: block;
+      width: 628px;
+      height: 48px;  
+      margin-left: 200px;
+      font-family: 'IBM Plex Mono';
+      font-size: 16px;
+      color: #060A24;
+      letter-spacing: 0;
+      line-height: 24px;
+    } 
+
+/* iframe */
+    .embed-container {
+      height:900px;
+      width:100%;        
+    }
+
+    .frame-container{
+      display: grid;
+      grid-template-columns: auto auto;
+      padding: 10px;
+    }
+
+    iframe{
+      width: 600px ;
+      height: 300px;
+      padding: 30px;
+    }
+
+/* images grid */
+    .interviews{
+      margin-top: -250px;
+}
+    .column {
+      margin: 0;
+      -ms-flex: 100%; /* IE10 */
+      flex: 100%;
+      max-width: 33.333%;
+      padding: 0;
+    }
+
+    /* topics */
+
+    .wrapper{
+      margin-left: -100px;
+      padding-left: 50px;
+    }
+
+    .wrapper p{
+      width: 220px;
+    }
+
+    /* phone */
+    .phoneimg img{
+      width: 457.6px;
+      height: 660px;
+      margin: 64px 62.4px 64px 200px;
+      transform: translatey(-190px);
+   }
+  
+    .phone p{
+      width: 464px;
+      height: 204px;
+      font-size: 16px;
+      line-height: 24px;
+      
+   }
+
+   .phone{
+    transform: translatey(50px);
+    margin: 0px 256px 343px 0px;
+}
+
+   /* final container */
+  
+   .end-container{
+     height: 518px;
+     clip-path: polygon(0 35%, 100% 0, 100% 100%, 0% 190%);
+  }
+
+
+  /* footer */
+  .footer{
+    padding:20px 60px 20px 60px;
+    display: grid;
+    grid-template-columns: auto auto;
+   
+  }
+  
+  .ft-legal p{    
+    display: flex;
+    justify-content: flex-start;
+    font-size: 18px;
+  }
+
+     .ft-social {
+      display: flex;
+      justify-content: flex-end;
+      margin-left: 50px;
+      font-size: 18px;
+    
+   
+  }
+      .ft-social i{
+      padding-left:30px;
+  }
+
+}
+       
+ 
